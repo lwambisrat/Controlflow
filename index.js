@@ -128,7 +128,7 @@ function registrationQueue(queue){
         console.log(`${nextUser} removed`)
         console.log(queue);
     }
-    console.log("all users have been registered");
+    console.log("All users have been registered.");
 }
 queue=['Lwam','Hewan','Mercylin'];
 registrationQueue(queue);
@@ -139,14 +139,20 @@ registrationQueue(queue);
   
   function testRetake(intialScore){
     intialScore.forEach(score =>{
-
-    do{
-        console.log(`current score is ${score}`);
-        score=score+10;
-    }
-    while(score<=50);
-    console.log(`final score ${score}`);
-  });
+      let attempt=1;
+      if (score>50){
+        console.log("Already passed.")
+      }else{
+        do{
+          console.log(`Score in attempt ${attempt} is ${score}.`);
+          score=score+10;
+          attempt++;
+      }
+      while(score<50);
+      console.log(`Final score ${score}.`);
+      }
+    });
+    
   };
 
    intialScore=[20,45,67,89];
